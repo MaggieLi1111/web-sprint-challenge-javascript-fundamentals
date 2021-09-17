@@ -18,9 +18,9 @@ myFunction();
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
 
-myFunction invoked, console.log(external) reacher outside its scope to grab external variable because it isn't defined in myFunction scope.
+`myFunction invoked, console.log(external) reacher outside its scope to grab external variable because it isn't defined in myFunction scope.
 Then nestedFunction invoked, console.log(internal) reaches outside its scope to find internal because it doesn't exist inside of function nestedFunction scope when internal is referenced.
-SO there's closure gives the ability to access the function look outside the scope chain and search for a variable being referenced in the outer scope.
+SO there's closure gives the ability to access the function look outside the scope chain and search for a variable being referenced in the outer scope.`
 
 
 
