@@ -18,9 +18,9 @@ myFunction();
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
 
-`myFunction invoked, console.log(external) reacher outside its scope to grab external variable because it isn't defined in myFunction scope.
+/*myFunction invoked, console.log(external) reacher outside its scope to grab external variable because it isn't defined in myFunction scope.
 Then nestedFunction invoked, console.log(internal) reaches outside its scope to find internal because it doesn't exist inside of function nestedFunction scope when internal is referenced.
-SO there's closure gives the ability to access the function look outside the scope chain and search for a variable being referenced in the outer scope.`
+SO there's closure gives the ability to access the function look outside the scope chain and search for a variable being referenced in the outer scope.*/
 
 
 
@@ -31,12 +31,13 @@ SO there's closure gives the ability to access the function look outside the sco
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
+
 function summation(number) {
-  let counter = 0;
+  let counter = 0; 
  for(let i = 0; i < number; i++){
-   counter++;  
+  counter += i; 
  }
- return counter;
+ return counter + number;
   }
  console.log(summation(4));
 
@@ -63,11 +64,12 @@ const zooAnimals = [
   */
 
   function animalNames(array){
+    const displayNames =[]; 
     array.forEach(function(item){
-      console.log( `name: ${item.animal_name},scientific:${item.scientific_name}`);
-    })
+    return displayNames.push("name" + item.animal_name + ", scientific:" + item.scientific_name);
+    });     
+    return displayNames;
   } 
-
   console.log(animalNames(zooAnimals));
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -78,10 +80,10 @@ const zooAnimals = [
 
   
   function lowerCaseNames(array){
-    const lowerCase = array.map(function(item){
+    const lowerCaseArray = array.map(function(item){
       return item.animal_name.toLowerCase();
-    })
-    return lowerCase;
+    });
+   return lowerCaseArray;
   }
   console.log(lowerCaseNames(zooAnimals));
 
@@ -91,10 +93,14 @@ const zooAnimals = [
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(array){
+    const low = array.filter(function(item){
+      return item.population < 5;
+    });
+   return low;
   }
   
+  console.log(lowPopulationAnimals(zooAnimals));
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -102,10 +108,14 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(array){
+    const totalPopulation = array.reduce(function(accumulator,item){
+      return accumulator + item.population;
+    },0);
+    return totalPopulation;
   }
-  
+  console.log(USApop(zooAnimals));  
+ 
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
