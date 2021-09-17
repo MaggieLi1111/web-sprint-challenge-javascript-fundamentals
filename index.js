@@ -136,9 +136,6 @@ const zooAnimals = [
 function add(num1, num2){
     return num1 + num2;
   }
-function calculator (num1, num2, cb){
-  return cb(num1, num2);
-}
 
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
